@@ -9,7 +9,10 @@
 	.type lock_mutex, function
 lock_mutex:
         @ INSERT CODE BELOW
-
+	
+	cmp r0,#1
+	beq lock_mutex
+	mov r0,#1
         @ END CODE INSERT
 	bx lr
 
@@ -19,7 +22,7 @@ lock_mutex:
 	.type unlock_mutex, function
 unlock_mutex:
 	@ INSERT CODE BELOW
-        
+        mov r0,#0
         @ END CODE INSERT
 	bx lr
 	.size unlock_mutex, .-unlock_mutex

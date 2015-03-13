@@ -34,6 +34,7 @@ void *doSomeThing(void *arg)
 
 int main(void)
 {
+	printf("a");
 	int i = 0;
 	int err;
 
@@ -43,7 +44,7 @@ int main(void)
 		return 1;
 	}
 #endif
-
+	printf("a");
 	while (i < 2) {
 		err = pthread_create(&(tid[i]), NULL, &doSomeThing, NULL);
 		if (err != 0)
